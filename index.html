@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CÔNG TY TNHH DƯỢC PHẨM A&A - Dịch vụ đóng gói dược phẩm, mỹ phẩm và hàng tiêu dùng chất lượng cao tại Nam Định.">
+  <title>CÔNG TY TNHH DƯỢC PHẨM A&A</title>
+  <style>
+    :root {
+      --primary: #0d6e8a;
+      --primary-dark: #094d61;
+      --accent: #2ecc71;
+      --accent-light: #e8f8f0;
+      --text: #1a2b3c;
+      --text-muted: #5a6b7d;
+      --bg: #ffffff;
+      --bg-alt: #f4f9fb;
+      --border: #dce8ee;
+      --shadow: 0 4px 24px rgba(13, 110, 138, 0.1);
+      --radius: 12px;
+      --transition: 0.3s ease;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--bg);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow var(--transition);
+    }
+
+    header.scrolled {
+      box-shadow: var(--shadow);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--primary);
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+    }
+
+    nav a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: color var(--transition);
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      margin: 5px 0;
+      transition: var(--transition);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 140px 0 100px;
+      background: linear-gradient(160deg, #e8f4f8 0%, #f0faf4 50%, #ffffff 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(46, 204, 113, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(13, 110, 138, 0.06) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-light);
+      color: var(--primary-dark);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1.25;
+      color: var(--primary-dark);
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      max-width: 520px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all var(--transition);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(13, 110, 138, 0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .hero-card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 20px 12px;
+      background: var(--bg-alt);
+      border-radius: var(--radius);
+    }
+
+    .stat-item .number {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--primary);
+      display: block;
+    }
+
+    .stat-item .label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .hero-card-icon {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 24px;
+      background: linear-gradient(135deg, var(--primary), #1a9ab5);
+      border-radius: var(--radius);
+      color: white;
+    }
+
+    .hero-card-icon svg {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 12px;
+    }
+
+    .hero-card-icon p {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    /* Sections */
+    section {
+      padding: 90px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 56px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 12px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: var(--primary-dark);
+      margin-bottom: 16px;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* About */
+    .about {
+      background: var(--bg);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image {
+      background: linear-gradient(135deg, var(--primary) 0%, #1a9ab5 100%);
+      border-radius: 20px;
+      padding: 48px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-image::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      right: -40px;
+      width: 160px;
+      height: 160px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+    }
+
+    .about-image h3 {
+      font-size: 1.4rem;
+      margin-bottom: 24px;
+    }
+
+    .info-list {
+      list-style: none;
+    }
+
+    .info-list li {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 0.95rem;
+    }
+
+    .info-list li:last-child {
+      border-bottom: none;
+    }
+
+    .info-list strong {
+      min-width: 130px;
+      opacity: 0.85;
+      font-weight: 500;
+    }
+
+    .about-text h3 {
+      font-size: 1.5rem;
+      color: var(--primary-dark);
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .feature-chip {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      background: var(--accent-light);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--primary-dark);
+    }
+
+    .feature-chip svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      color: var(--accent);
+    }
+
+    /* Services */
+    .services {
+      background: var(--bg-alt);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      border: 1px solid var(--border);
+      transition: all var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: transparent;
+    }
+
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--accent-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+
+    .service-icon svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .service-card h3 {
+      font-size: 1.15rem;
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .service-card ul {
+      margin-top: 14px;
+      padding-left: 18px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .service-card ul li {
+      margin-bottom: 6px;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 48px;
+    }
+
+    .contact-info h3 {
+      font-size: 1.4rem;
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+    }
+
+    .contact-info > p {
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .contact-item-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--accent-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .contact-item-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .contact-item h4 {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .contact-item a,
+    .contact-item p {
+      font-size: 1rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .contact-item a:hover {
+      color: var(--primary);
+    }
+
+    .contact-form {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px;
+      box-shadow: var(--shadow);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      transition: border-color var(--transition);
+      background: var(--bg-alt);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: white;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-success {
+      display: none;
+      background: var(--accent-light);
+      color: var(--primary-dark);
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .form-success.show {
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary-dark);
+      color: rgba(255, 255, 255, 0.8);
+      padding: 48px 0 24px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand .logo {
+      color: white;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .footer-col h4 {
+      color: white;
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col a {
+      font-size: 0.9rem;
+      transition: color var(--transition);
+    }
+
+    .footer-col a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.85rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-content,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 20px 24px;
+        gap: 0;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow);
+      }
+
+      nav ul.open {
+        display: flex;
+      }
+
+      nav ul li {
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      nav ul li:last-child {
+        border-bottom: none;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .about-features {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 120px 0 60px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <div class="logo-icon">A&A</div>
+        <span>Dược Phẩm A&A</span>
+      </a>
+      <nav>
+        <button class="nav-toggle" id="navToggle" aria-label="Mở menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul id="navMenu">
+          <li><a href="#trang-chu">Trang chủ</a></li>
+          <li><a href="#gioi-thieu">Giới thiệu</a></li>
+          <li><a href="#dich-vu">Dịch vụ</a></li>
+          <li><a href="#lien-he">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="trang-chu">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <div class="hero-badge">Thành lập từ năm 2019</div>
+        <h1>CÔNG TY TNHH DƯỢC PHẨM A&A</h1>
+        <p>Chuyên cung cấp dịch vụ đóng gói dược phẩm, thực phẩm chức năng, mỹ phẩm và hàng tiêu dùng — đảm bảo chất lượng, an toàn và tuân thủ tiêu chuẩn ngành.</p>
+        <div class="hero-actions">
+          <a href="#lien-he" class="btn btn-primary">Liên hệ ngay</a>
+          <a href="#dich-vu" class="btn btn-outline">Xem dịch vụ</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="16" y="8" width="32" height="48" rx="4" stroke="currentColor" stroke-width="2.5"/>
+              <line x1="24" y1="20" x2="40" y2="20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="24" y1="28" x2="36" y2="28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="32" cy="42" r="6" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M32 38v4l2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <p>Giải pháp đóng gói toàn diện</p>
+          </div>
+          <div class="hero-card-grid">
+            <div class="stat-item">
+              <span class="number">2019</span>
+              <span class="label">Năm thành lập</span>
+            </div>
+            <div class="stat-item">
+              <span class="number">1B+</span>
+              <span class="label">Vốn điều lệ (VNĐ)</span>
+            </div>
+            <div class="stat-item">
+              <span class="number">3+</span>
+              <span class="label">Lĩnh vực dịch vụ</span>
+            </div>
+            <div class="stat-item">
+              <span class="number">100%</span>
+              <span class="label">Cam kết chất lượng</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="gioi-thieu">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Về chúng tôi</span>
+        <h2>Đối tác tin cậy trong ngành dược phẩm</h2>
+        <p>CÔNG TY TNHH DƯỢC PHẨM A&A hoạt động từ năm 2019, tập trung vào dịch vụ đóng gói chuyên nghiệp cho các sản phẩm y tế, dược phẩm và tiêu dùng.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-image">
+          <h3>Thông tin doanh nghiệp</h3>
+          <ul class="info-list">
+            <li><strong>Mã số DN:</strong> 0601175815</li>
+            <li><strong>Loại hình:</strong> TNHH một thành viên</li>
+            <li><strong>Ngày thành lập:</strong> 27/02/2019</li>
+            <li><strong>Vốn điều lệ:</strong> 1.000.000.000 VNĐ</li>
+            <li><strong>Giám đốc:</strong> Trần Thị Hằng</li>
+            <li><strong>Trụ sở:</strong> Thôn Tam Quang, Xã Yên Thắng, Huyện Ý Yên, Tỉnh Nam Định</li>
+          </ul>
+        </div>
+        <div class="about-text">
+          <h3>Sứ mệnh & Cam kết</h3>
+          <p>Chúng tôi cung cấp dịch vụ gia công đóng gói với quy trình kiểm soát chất lượng nghiêm ngặt, đáp ứng các yêu cầu về nhãn mác, tờ hướng dẫn sử dụng tiếng Việt và tiêu chuẩn ngành dược phẩm.</p>
+          <p>Với đội ngũ có kinh nghiệm và cơ sở vật chất phù hợp, A&A là đối tác đáng tin cậy cho doanh nghiệp cần giải pháp đóng gói linh hoạt, hiệu quả.</p>
+          <div class="about-features">
+            <div class="feature-chip">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              Tuân thủ tiêu chuẩn
+            </div>
+            <div class="feature-chip">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              Quy trình an toàn
+            </div>
+            <div class="feature-chip">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              Gia công linh hoạt
+            </div>
+            <div class="feature-chip">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              Hỗ trợ tận tâm
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="dich-vu">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Dịch vụ</span>
+        <h2>Giải pháp đóng gói đa ngành</h2>
+        <p>Chúng tôi cung cấp dịch vụ đóng gói chuyên biệt cho nhiều lĩnh vực, đáp ứng nhu cầu đa dạng của đối tác.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+              <path d="M12 5v14"/><path d="M8 9h8"/>
+            </svg>
+          </div>
+          <h3>Dược phẩm & Y tế</h3>
+          <p>Đóng gói thuốc, sản phẩm sinh học y tế theo quy định ngành.</p>
+          <ul>
+            <li>Đóng gói thuốc và dược phẩm</li>
+            <li>Dán nhãn và tờ hướng dẫn tiếng Việt</li>
+            <li>Đóng gói sản phẩm sinh học y tế</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/>
+              <path d="M8.5 8.5v.01"/><path d="M16 15v.01"/><path d="M12 12v.01"/>
+            </svg>
+          </div>
+          <h3>Mỹ phẩm & Thực phẩm chức năng</h3>
+          <p>Đóng gói bán lẻ cho sản phẩm làm đẹp và thực phẩm bổ sung.</p>
+          <ul>
+            <li>Đóng gói mỹ phẩm</li>
+            <li>Đóng gói thực phẩm chức năng</li>
+            <li>Nhãn mác và bao bì theo yêu cầu</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+              <path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/>
+            </svg>
+          </div>
+          <h3>Hàng tiêu dùng & Quà tặng</h3>
+          <p>Gia công đóng gói cho hàng tiêu dùng và sản phẩm quà tặng.</p>
+          <ul>
+            <li>Đóng gói hàng tiêu dùng</li>
+            <li>Đóng gói quà tặng</li>
+            <li>Dịch vụ gia công đóng gói thuê ngoài</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="lien-he">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Liên hệ</span>
+        <h2>Hợp tác cùng A&A</h2>
+        <p>Liên hệ với chúng tôi để được tư vấn giải pháp đóng gói phù hợp với nhu cầu của doanh nghiệp bạn.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Thông tin liên hệ</h3>
+          <p>Chúng tôi sẵn sàng hỗ trợ và tư vấn trong giờ hành chính.</p>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Điện thoại</h4>
+              <a href="tel:+84566967536">+84 566 967 536</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:tiagojoseaguila@gmail.com">tiagojoseaguila@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Địa chỉ</h4>
+              <p>Thôn Tam Quang, Xã Yên Thắng, Huyện Ý Yên, Tỉnh Nam Định, Việt Nam</p>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-success" id="formSuccess">Cảm ơn bạn! Chúng tôi sẽ liên hệ lại sớm nhất.</div>
+          <div class="form-group">
+            <label for="name">Họ và tên</label>
+            <input type="text" id="name" name="name" required placeholder="Nhập họ tên của bạn">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="email@congty.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">Số điện thoại</label>
+            <input type="tel" id="phone" name="phone" placeholder="Số điện thoại liên hệ">
+          </div>
+          <div class="form-group">
+            <label for="message">Nội dung</label>
+            <textarea id="message" name="message" required placeholder="Mô tả nhu cầu đóng gói của bạn..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%">Gửi tin nhắn</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <div class="logo-icon">A&A</div>
+            <span>Dược Phẩm A&A</span>
+          </a>
+          <p>CÔNG TY TNHH DƯỢC PHẨM A&A — Đối tác tin cậy trong lĩnh vực dịch vụ đóng gói dược phẩm, mỹ phẩm và hàng tiêu dùng tại Việt Nam.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Liên kết</h4>
+          <ul>
+            <li><a href="#trang-chu">Trang chủ</a></li>
+            <li><a href="#gioi-thieu">Giới thiệu</a></li>
+            <li><a href="#dich-vu">Dịch vụ</a></li>
+            <li><a href="#lien-he">Liên hệ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Liên hệ</h4>
+          <ul>
+            <li><a href="tel:+84566967536">+84 566 967 536</a></li>
+            <li><a href="mailto:tiagojoseaguila@gmail.com">tiagojoseaguila@gmail.com</a></li>
+            <li>MST: 0601175815</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 CÔNG TY TNHH DƯỢC PHẨM A&A. Bảo lưu mọi quyền.</span>
+        <span>Mã số doanh nghiệp: 0601175815</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('header');
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    const contactForm = document.getElementById('contactForm');
+    const formSuccess = document.getElementById('formSuccess');
+
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navMenu.classList.remove('open'));
+    });
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      formSuccess.classList.add('show');
+      contactForm.reset();
+      setTimeout(() => formSuccess.classList.remove('show'), 5000);
+    });
+  </script>
+
+</body>
+</html>
